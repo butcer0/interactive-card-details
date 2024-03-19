@@ -1,0 +1,14 @@
+<div *ngIf="loading$ | async; else cardsListTemplate">
+  <p>Loading cards...</p>
+</div>
+<ng-template #cardsListTemplate>
+  <ul>
+    <li *ngFor="let card of cards$ | async">
+      {{ card.name }}
+      {{ card.number }}
+      {{ card.expDate }}
+      {{ card.cvc }}
+      <button (click)="removeCard(card.number)"></button>
+    </li>
+  </ul>
+</ng-template>
