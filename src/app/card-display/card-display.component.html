@@ -1,14 +1,25 @@
-<div *ngIf="loading$ | async; else cardsListTemplate">
-  <p>Loading cards...</p>
+<div class="loading-screen" *ngIf="loading$ | async; else cardsListTemplate">
+  <div class="loading-icon">
+    <p>Loading cards...</p>
+  </div>
 </div>
 <ng-template #cardsListTemplate>
-  <ul>
-    <li *ngFor="let card of cards$ | async">
-      {{ card.name }}
-      {{ card.number }}
-      {{ card.expDate }}
-      {{ card.cvc }}
-      <button (click)="removeCard(card.number)"></button>
-    </li>
-  </ul>
+  <ng-container *ngIf="cards$ | async as cards; else noCardsTemplate">
+    <div *ngIf="cards.length > 0; else noCardsTemplate">
+      <ul>
+        <li *ngFor="let card of cards">
+          <div class="card-name">{{ card.name }}</div>
+          <div class="card-number">{{ card.number }}</div>
+          <div class="card-exp-date">{{ card.expDate }}</div>
+          <div class="card-cvc">{{ card.cvc }}</div>
+          <button (click)="removeCard(card)">Remove Card</button>
+        </li>
+      </ul>
+    </div>
+  </ng-container>
+</ng-template>
+<ng-template #noCardsTemplate>
+  <div class="no-cards">
+    <p>No cards stored in the local store</p>
+  </div>
 </ng-template>

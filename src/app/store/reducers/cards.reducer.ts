@@ -18,8 +18,8 @@ export const cardsReducer = createReducer(
     ...state,
     cards: [...state.cards, card],
   })),
-  on(CardsActions.removeCard, (state, { number }) => ({
+  on(CardsActions.removeCard, (state, { id }) => ({
     ...state,
-    cards: state.cards.filter(card => card.number !== number)
+    cards: state.cards.filter(card => card.id !== id)
   }))
 )

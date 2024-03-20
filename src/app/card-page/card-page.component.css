@@ -1,0 +1,23 @@
+/* Assuming this CSS is part of a larger stylesheet for the page hosting these components */
+
+/* Use a container to hold both components and apply flexbox layout */
+.page-container {
+  display: flex;
+  height: 100vh; /* Adjust the height as needed, vh units make it full viewport height */
+}
+
+app-card-display {
+  width: 60%;
+  overflow-y: auto; /* Makes the left side scrollable vertically */
+  height: 50%; /* Ensures it takes full height of the container */
+}
+
+app-card-form {
+  width: 40%;
+  padding: 20px; /* Adds some padding around the form for aesthetics */
+  height: 50%; /* Ensures it takes full height of the container */
+  overflow-y: auto; /* Optional, in case your form is longer than the viewport */
+  background-image: url('/assets/images/bg-main-desktop.png');
+  background-size: cover;
+  background-position: center;
+}

@@ -20,6 +20,6 @@ export const addCard = createAction(
 
 export const removeCard = createAction(
   '[Card] Remove Card',
-  props<{ number: string }>()
+  props<{ id: string }>()
 )
 

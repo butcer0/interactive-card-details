@@ -1,1 +1,23 @@
-<p>card-form works!</p>
+<form [formGroup]="cardForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Name:</label>
+    <input id="name" type="text" formControlName="name">
+    <!-- Display errors -->
+  </div>
+  <div>
+    <label for="number">Card Number:</label>
+    <input id="number" type="text" formControlName="number">
+    <!-- Display errors -->
+  </div>
+  <div>
+    <label for="expDate">Expiration Date:</label>
+    <input id="expDate" type="text" formControlName="expDate">
+    <!-- Display errors -->
+  </div>
+  <div>
+    <label for="cvc">CVC:</label>
+    <input id="cvc" type="text" formControlName="cvc">
+    <!-- Display errors -->
+  </div>
+  <button type="submit" [disabled]="!cardForm.valid">Submit</button>
+</form>

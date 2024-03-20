@@ -1,0 +1,34 @@
+/* Loading Screen Styles */
+.loading-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Use full viewport height */
+  background-color: #f3f4f6; /* Light background color */
+  color: #64748b; /* Mild color for the text */
+  font-family: 'Arial', sans-serif;
+  font-size: 1.25rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-icon {
+  border: 5px solid #f3f4f6; /* Light border for spinner animation, matching background */
+  border-top: 5px solid #3498db; /* Colorful part of the spinner */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite; /* Spin animation */
+  margin-right: 20px;
+}
+
+/* Adjust the <p> tag specifically within the loading screen for additional styling */
+.loading-screen p {
+  margin: 0; /* Reset margin */
+  display: flex;
+  align-items: center;
+}

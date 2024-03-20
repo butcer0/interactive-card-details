@@ -16,7 +16,7 @@ import * as CardActions from '../store/actions/cards.actions';
     NgIf
   ],
   templateUrl: './card-display.component.html',
-  styleUrl: './card-display.component.css'
+  styleUrls: ['./card-display.component.css', './card-display-loading.component.css']
 })
 export class CardDisplayComponent implements OnInit {
   cards$: Observable<CardModel[]> = this.store.select(selectAlLCards);
@@ -31,7 +31,8 @@ export class CardDisplayComponent implements OnInit {
   loadCards(): void {
     this.store.dispatch(CardActions.loadCards());
   }
-  removeCard(cardNumber: string): void {
-    this.store.dispatch(CardActions.removeCard({ number: cardNumber }));
+  removeCard(card: CardModel): void {
+    const id = card.id;
+    this.store.dispatch(CardActions.removeCard({ id }));
   }
 }

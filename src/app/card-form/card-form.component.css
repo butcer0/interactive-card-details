@@ -1,0 +1,63 @@
+/* card-form.component.css */
+form {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f7f7f7;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+div {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+  font-size: 16px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+input[type="text"]:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+button[type="submit"] {
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  padding: 12px 20px; /* Padding */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Text size */
+  transition: background 0.3s ease; /* Smooth background color change on hover */
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049; /* Darker shade of green on hover */
+}
+
+button[type="submit"]:disabled {
+  background-color: #cccccc; /* Gray background when disabled */
+  color: #666666; /* Dark gray text when disabled */
+  cursor: not-allowed; /* Show 'not-allowed' cursor on hover when disabled */
+}
+
+/* Error Message Styles */
+.error-message {
+  color: #dc3545;
+  font-size: 14px;
+  margin-top: 5px;
+}
