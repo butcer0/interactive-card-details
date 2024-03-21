@@ -1,0 +1,19 @@
+<header title="tic-tac-toe" class="game-header">
+  <span><h2>Tic-Tac-Toe</h2><p> Turn: {{curPlayer}}</p></span>
+  <button class="reset-game" (click)="resetGame()">Reset Game</button>
+</header>
+<div class="game-board" *ngIf = "gameData$ | async as gameData; else loading">
+  <div *ngIf="winner$ | async as winner">
+    <h1>Winner! {{winner}}</h1>
+  </div>
+  <ng-container *ngIf="!(winner$ | async)">
+    <div class="square" *ngFor="let data of gameData; let ind = index">
+      <div class="square-button" *ngIf="data === 0" (click)="updateData(ind, curPlayer)"></div>
+      <p *ngIf="data === 1">X</p>
+      <p *ngIf="data === 2">O</p>
+    </div>
+  </ng-container>
+</div>
+<ng-template #loading>
+  <p>Game is loading...</p>
+</ng-template>
