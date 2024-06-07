@@ -6,11 +6,15 @@ import { provideRouter } from "@angular/router";
 import { routes } from "./app/app.routes";
 import { provideEffects } from "@ngrx/effects";
 import { CardEffects } from "./app/store/effects/card.effects";
+import { importProvidersFrom } from "@angular/core";
+import { HttpClientModule } from "@angular/common/http";
 
 bootstrapApplication(AppComponent, {
   providers: [
+    importProvidersFrom(HttpClientModule),
     provideStore(rootReducer),
     provideEffects([CardEffects]),
-    provideRouter(routes)
+    provideRouter(routes),
+
   ],
 }).catch(err => console.error(err));

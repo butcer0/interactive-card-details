@@ -1,0 +1,33 @@
+export const HangmanCategoriesConstants: { [key: string]: string[] } = {
+  animals: ['hippopotamus',
+    'scorpion',
+    'penguin',
+    'orangutan',
+    'porcupine',
+    'dolphin',
+    'armadillo',
+    'koala',
+    'tarantula',
+    'chimpanzee',
+    'giraffe',
+    'chameleon',
+    'platypus',
+    'narwhal',
+    'octopus',
+    'lemur',
+    'kangaroo',
+    'alligator',
+    'mongoose',
+    'rhinoceros'],
+  fruits: [
+    'apple', 'banana', 'cherry', 'date', 'elderberry', 'fig', 'grapefruit', 'honeydew',
+    'kiwi', 'lemon', 'mango', 'nectarine', 'orange', 'papaya', 'quince', 'raspberry',
+    'strawberry', 'tangerine', 'ugli', 'watermelon'
+  ],
+  countries: ['Australia', 'Brazil', 'Canada', 'Denmark', 'Egypt', 'Finland', 'Greece', 'Hungary',
+    'India', 'Japan', 'Kenya', 'Luxembourg', 'Mexico', 'Nepal', 'Oman', 'Portugal',
+    'Qatar', 'Russia', 'Spain', 'Turkey'],
+  sports: ['archery', 'baseball', 'cricket', 'diving', 'equestrian', 'fencing', 'golf', 'hockey',
+    'iceskating', 'judo', 'karate', 'lacrosse', 'motorsport', 'netball', 'orienteering',
+    'polo', 'quidditch', 'rugby', 'skiing', 'tennis']
+};

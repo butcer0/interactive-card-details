@@ -1,0 +1,7 @@
+<div class="container">
+  <button *ngFor="let item of alphabet$ | async"
+          (click)="addGuessedChar(item.letter)"
+          [disabled]="item.disabled">
+    {{item.letter}}
+  </button>
+</div>

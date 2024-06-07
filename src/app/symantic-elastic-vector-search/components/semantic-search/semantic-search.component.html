@@ -1,0 +1,22 @@
+<div class="search-container">
+  <div class="search-bar">
+    <input type="text" placeholder="Enter search term..." [(ngModel)]="searchQuery">
+    <button (click)="performSearch()">Search</button>
+  </div>
+  <div class="results-container">
+    <div *ngFor="let result of searchResults$ | async" class="result-item">
+      <h2>{{ result.ProductName }}</h2>
+      <p><strong>Brand:</strong> {{ result.ProductBrand }}</p>
+      <p><strong>ID:</strong> {{ result.ProductID }}</p>
+      <p><strong>Gender:</strong> {{ result.Gender }}</p>
+      <p><strong>Price:</strong> {{ result.Price_INR | currency:'INR' }}</p>
+      <p><strong>Number of Images:</strong> {{ result.NumImages }}</p>
+      <p><strong>Description:</strong> {{ result.Description }}</p>
+      <p><strong>Primary Color:</strong> {{ result.PrimaryColor }}</p>
+      <div *ngIf="result.DescriptionVector">
+        <strong>Vector Values:</strong>
+        <span *ngFor="let val of result.DescriptionVector">{{ val | number:'1.2-2' }}</span>
+      </div>
+    </div>
+  </div>
+</div>

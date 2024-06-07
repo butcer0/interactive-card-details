@@ -1,0 +1,19 @@
+<header title="TT2">
+  <div *ngIf="playerData$ | async as playerData">
+    <h2>Player: {{playerData.name}}</h2>
+    <h3>Wins: {{playerData.wins}}</h3>
+  </div>
+  <button (click)="resetGame()">Reset Game</button>
+  <div class="winner-label" *ngIf="winner$ | async as winner">
+    {{winner}}
+  </div>
+</header>
+
+<div *ngIf="!(winner$ | async)" class="container">
+  <button *ngFor="let squareValue of gameSquares$ | async; let ind = index"
+          class="board-square" (click)="clickSquare(ind, curPlayer)"
+          [disabled]="squareValue > 0">
+    <div class="value-square" *ngIf="squareValue > 0">{{squareValue === 1 ? 'X' : 'O'}}</div>
+    <div class="empty-square" *ngIf="squareValue == 0">*</div>
+  </button>
+</div>

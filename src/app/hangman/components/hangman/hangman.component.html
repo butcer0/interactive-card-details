@@ -1,0 +1,8 @@
+<div *ngIf="debugging">Word: {{gameWord$ | async}}</div>
+<div *ngIf="showGuessesRemaining">Guesses Remaining: {{remainingGuesses$ | async}}</div>
+<div class="container">
+  <div class="letter-box" *ngFor="let item of gameWordItems$ | async">
+    <ng-container *ngIf="item.visible">{{item.letter}}</ng-container>
+  </div>
+</div>
+

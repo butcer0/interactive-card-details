@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 50vw;
+  height: 10vh;
+}
+
+.letter-box {
+  flex-basis: auto;
+  margin: 1px;
+  border-bottom: 2px solid #222222;
+  min-width: 2px;
+  min-height: 10px;
+  font-size: 68px;
+}

@@ -1,0 +1,16 @@
+<header title="HangMan">
+  <h1>HangMan</h1>
+  <button class="reset-game" (click)="resetGame()">Reset Game</button>
+</header>
+<ng-container *ngIf="winner$ | async as winner">
+  <h2>{{ winner }}</h2>
+</ng-container>
+<ng-container *ngIf="gameWordSet$ | async; else categories">
+  <app-hangman></app-hangman>
+  <ng-container *ngIf="showKeyboard$ | async">
+    <app-keyboard></app-keyboard>
+  </ng-container>
+</ng-container>
+<ng-template #categories>
+    <app-category-screen></app-category-screen>
+</ng-template>
